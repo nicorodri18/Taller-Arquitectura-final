@@ -112,7 +112,10 @@ flowchart LR
   C9 --> C10[Despacho y Rastreo]
   C10 --> C11[Entrega]
   C11 --> C12[Posventa y CRM]
+
 ```
+
+
 
 ---
 
