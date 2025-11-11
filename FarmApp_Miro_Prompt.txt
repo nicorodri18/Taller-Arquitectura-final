@@ -1,14 +1,1 @@
-Instrucciones de tablero (Miro/Draw.io) — FarmApp (Taller 7)
-
-1) Crea 5 swimlanes verticales tituladas: Negocio, Información, Aplicaciones, Infraestructura, Seguridad.
-2) En la lane de Negocio, coloca sticky notes para el flujo "Explorar → Rx → Validación → Carrito → Checkout → Reserva → Despacho → Rastreo → Posventa". Conecta con flechas.
-3) En la lane de Información, bajo cada sticky de Negocio, añade tarjetas con entidades: 
-   - Catálogo: Producto, Sucursal, Inventario
-   - Rx: Prescripción, Cliente, Farmacéutico, Médico (opcional)
-   - Pedido: Pedido, LíneaPedido, Pago, Descuento, Dirección, Entrega, Repartidor
-4) En la lane de Aplicaciones, mapea componentes: App Móvil/Web, API Gateway, MS Catálogo, MS Prescripciones, Motor de Reglas, MS Carritos, MS Pagos (PSP), MS Inventario, MS Logística/TMS, MS Notificaciones, CRM, POS, ETL/DWH/BI.
-5) En la lane de Infraestructura, ubica: CDN, WAF, K8s (frontend/backend), Object Storage (KMS), DB replicada (multi-sucursal), Message Bus/Events, VPC privada, SaaS (CRM, PSP), Data Lake/Warehouse.
-6) En la lane de Seguridad, alínea controles por flujo: TLS 1.3, WAF, MFA staff, RBAC, cifrado en reposo (AES-256), DLP, PCI DSS/3DS2, antifraude, auditoría inmutable, DKIM/SPF/DMARC, anonimización en BI.
-7) Traza líneas verticales de trazabilidad: por cada etapa de Negocio, conecta su(s) Entidades, Aplicaciones, Infra y Controles. Usa un color por etapa.
-8) Añade una zona de leyenda: íconos (⚙ servicio, 📦 entidad, 🛡 control, ☁ infraestructura). 
-9) Finaliza con callouts de decisiones clave (p.ej., “SAGA para consistencia eventual”, “Tokenización de tarjetas fuera de scope PCI”).
+I
