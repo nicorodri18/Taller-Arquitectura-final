@@ -9,137 +9,90 @@ Integrar las vistas de **Negocio, Información, Aplicaciones, Infraestructura y 
 
 > **Lectura:** cada etapa de negocio se alinea con entidades de datos, servicios/apps, componentes de infraestructura y controles de seguridad.
 ```mermaid
-> flowchart TB
-  %% ---------- Negocio ----------
-  subgraph B["Capa Negocio"]
-    B1["Cliente"]
-    B2["Navega catalogo"]
-    B3["Carga Prescripcion"]
-    B4["Validacion Rx"]
-    B5["Carrito"]
-    B6["Checkout y Pago"]
-    B7["Reserva de Stock"]
-    B8["Despacho y Entrega"]
-    B9["Rastreo y Notificaciones"]
-    B10["Posventa / CRM"]
-    B1 --> B2 --> B3 --> B4 --> B5 --> B6 --> B7 --> B8 --> B9 --> B10
+>flowchart TB
+  subgraph Negocio
+    N1[Cliente]
+    N2[Navega Catalogo]
+    N3[Carga Prescripcion]
+    N4[Validacion Rx]
+    N5[Carrito]
+    N6[Checkout y Pago]
+    N7[Reserva de Stock]
+    N8[Despacho y Entrega]
+    N9[Rastreo y Notificaciones]
+    N10[Posventa y CRM]
+    N1 --> N2 --> N3 --> N4 --> N5 --> N6 --> N7 --> N8 --> N9 --> N10
   end
 
-  %% ---------- Información ----------
-  subgraph D["Capa Informacion"]
-    D1["Producto"]
-    D2["Inventario"]
-    D3["Sucursal"]
-    D4["Prescripcion"]
-    D5["Cliente"]
-    D6["Farmaceutico"]
-    D7["Pedido"]
-    D8["LineaPedido"]
-    D9["Pago"]
-    D10["Descuento"]
-    D11["Entrega"]
-    D12["Repartidor"]
+  subgraph Aplicaciones
+    A1[App Movil]
+    A2[Web E-commerce]
+    A3[API Gateway]
+    A4[MS Catalogo]
+    A5[MS Prescripciones]
+    A6[Motor de Reglas]
+    A7[MS Carritos]
+    A8[MS Pagos PSP]
+    A9[MS Inventario]
+    A10[MS Logistica TMS]
+    A11[MS Notificaciones]
+    A12[CRM Service Desk]
+    A13[ETL DWH BI]
   end
 
-  %% ---------- Aplicaciones ----------
-  subgraph A["Capa Aplicaciones"]
-    A1["App Movil"]
-    A2["Web E-commerce"]
-    A3["API Gateway"]
-    A4["MS Catalogo"]
-    A5["MS Prescripciones"]
-    A6["Motor de Reglas"]
-    A7["MS Carritos"]
-    A8["MS Pagos / PSP"]
-    A9["MS Inventario"]
-    A10["MS Logistica / TMS"]
-    A11["MS Notificaciones"]
-    A12["CRM / Service Desk"]
-    A13["ETL / DWH / BI"]
+  subgraph Infraestructura
+    I1[CDN]
+    I2[WAF]
+    I3[K8s Front Back]
+    I4[Object Storage KMS]
+    I5[DB Replicada]
+    I6[Message Bus Events]
+    I7[VPC Privada]
+    I8[SaaS PSP CRM]
+    I9[Data Lake Warehouse]
   end
 
-  %% ---------- Infraestructura ----------
-  subgraph I["Capa Infraestructura"]
-    I1["CDN"]
-    I2["WAF"]
-    I3["K8s Front y Back"]
-    I4["Object Storage + KMS"]
-    I5["DB replicada multi-sucursal"]
-    I6["Message Bus / Events"]
-    I7["VPC privada"]
-    I8["SaaS PSP / CRM"]
-    I9["Data Lake / Warehouse"]
+  subgraph Seguridad
+    S1[TLS 1.3]
+    S2[WAF Rules Rate Limiting]
+    S3[MFA Staff RBAC]
+    S4[Cifrado AES256]
+    S5[Antifraude 3DS2]
+    S6[Auditoria Inmutable]
+    S7[DKIM SPF DMARC]
+    S8[Anonimizacion BI]
+    S9[DLP Basico]
   end
 
-  %% ---------- Seguridad ----------
-  subgraph S["Capa Seguridad"]
-    S1["TLS 1.3"]
-    S2["WAF / Rate limiting"]
-    S3["MFA staff + RBAC"]
-    S4["Cifrado en reposo (KMS)"]
-    S5["Antifraude / 3DS2"]
-    S6["Auditoria inmutable"]
-    S7["DKIM / SPF / DMARC"]
-    S8["Anonimizacion BI"]
-    S9["DLP basico"]
-  end
-
-  %% ---- Trazabilidad Negocio -> Datos ----
-  B2 -.-> D1
-  B2 -.-> D2
-  B2 -.-> D3
-  B3 -.-> D4
-  B3 -.-> D5
-  B6 -.-> D7
-  B6 -.-> D8
-  B6 -.-> D9
-  B6 -.-> D10
-  B8 -.-> D11
-  B8 -.-> D12
-
-  %% ---- Negocio -> Apps ----
-  B2 --> A1
-  B2 --> A2
-  B2 --> A3
+  %% Trazabilidad simplificada
+  N2 --> A1
+  N2 --> A2
+  N2 --> A3
   A3 --> A4
-  B3 --> A1
-  B3 --> A2
-  B3 --> A3
+  N3 --> A5
   A5 --> A6
-  B5 --> A7
-  B6 --> A8
-  B7 --> A9
-  B8 --> A10
-  B9 --> A11
-  B9 --> A12
-  B10 --> A12
-  B10 --> A13
-
-  %% ---- Apps -> Infra ----
+  N5 --> A7
+  N6 --> A8
+  N7 --> A9
+  N8 --> A10
+  N9 --> A11
+  N10 --> A12
+  N10 --> A13
   A1 --> I1
   A2 --> I1
-  I1 --> I2
-  I2 --> I3
+  I1 --> I2 --> I3
   A5 --> I4
-  A4 --> I5
-  A7 --> I5
   A9 --> I5
   A8 --> I8
-  A12 --> I8
   A10 --> I6
-  A11 --> I6
   A13 --> I9
-
-  %% ---- Infra -> Seguridad ----
   I1 --> S1
   I2 --> S2
   I3 --> S3
   I4 --> S4
   I8 --> S5
   I6 --> S6
-  I1 --> S7
   I9 --> S8
-  I4 --> S9
   ```
 
 ---
@@ -263,10 +216,10 @@ flowchart TB
     CART[MS Carritos]
     PAY[MS Pagos]
     INV[MS Inventario]
-    LOG[MS Logistica / TMS]
+    LOG[MS Logistica TMS]
     NOTI[MS Notificaciones]
-    CRM[CRM / Service Desk (SaaS)]
-    ETL[ETL / DWH / BI]
+    CRM[CRM y Service Desk SaaS]
+    ETL[ETL DWH BI]
   end
 
   APIGW --> CAT
