@@ -94,6 +94,7 @@ flowchart TB
   I8 --> S5
   I6 --> S6
   I9 --> S8
+```
 
 
 ## 🔁 Proceso de Negocio (Compra con Prescripción)
