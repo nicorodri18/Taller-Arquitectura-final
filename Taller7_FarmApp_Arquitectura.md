@@ -151,15 +151,15 @@ flowchart LR
   C1 --> C2{Producto con Rx?}
   C2 -- Si --> C3[Cargar Prescripcion]
   C2 -- No --> C4[Agregar al Carrito]
-  C3 --> C5[Validacion Rx (farmaceutico/reglas)]
+  C3 --> C5[Validacion Rx - Farmaceutico o Reglas]
   C5 -- Aprobada --> C4
-  C5 -- Rechazada --> C6[Notificar y sugerir alternativas]
+  C5 -- Rechazada --> C6[Notificar y Sugerir Alternativas]
   C4 --> C7[Checkout y Pago]
   C7 --> C8[Reserva de Stock por Sucursal]
-  C8 --> C9[Pick-Pack-Ship (Bodega)]
+  C8 --> C9[Pick Pack Ship - Bodega]
   C9 --> C10[Despacho y Rastreo]
   C10 --> C11[Entrega]
-  C11 --> C12[Posventa / CRM]
+  C11 --> C12[Posventa y CRM]
 ```
 
 ---
