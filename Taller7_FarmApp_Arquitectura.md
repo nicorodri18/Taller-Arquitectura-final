@@ -1,7 +1,7 @@
 # Taller 7 — Integración de Vistas de Arquitectura (FarmApp)
 
 ## 🎯 Objetivo
-Integrar las vistas de **Negocio, Información, Aplicaciones, Infraestructura y Seguridad** en una narrativa visual y trazable que respalde los objetivos de FarmApp (cadena nacional de farmacias con e‑commerce).
+Integrar las vistas de **Negocio, Información, Aplicaciones, Infraestructura y Seguridad** en una narrativa visual y trazable que respalde los objetivos de FarmApp (cadena nacional de farmacias con e-commerce).
 
 ---
 
