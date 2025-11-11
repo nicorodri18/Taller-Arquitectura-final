@@ -8,8 +8,9 @@ Integrar las vistas de **Negocio, Información, Aplicaciones, Infraestructura y 
 ## 🗺️ Vista Integrada (Mapa en Capas)
 
 > **Lectura:** cada etapa de negocio se alinea con entidades de datos, servicios/apps, componentes de infraestructura y controles de seguridad.
+
 ```mermaid
->flowchart TB
+flowchart TB
   subgraph Negocio
     N1[Cliente]
     N2[Navega Catalogo]
@@ -93,8 +94,6 @@ Integrar las vistas de **Negocio, Información, Aplicaciones, Infraestructura y 
   I8 --> S5
   I6 --> S6
   I9 --> S8
-  ```
-
 ---
 
 ## 🔁 Proceso de Negocio (Compra con Prescripción)
