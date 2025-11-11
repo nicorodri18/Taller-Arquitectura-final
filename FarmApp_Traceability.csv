@@ -1,0 +1,11 @@
+Proceso de Negocio,Evento/Actividad,Entidades Clave,Servicio / Aplicación,Infraestructura,Controles de Seguridad
+Explorar catálogo,Consulta de productos y disponibilidad,"Producto, Inventario, Sucursal","App Móvil/Web, API Gateway, MS Catálogo","CDN, API GW, K8s apps","TLS 1.3, WAF, cache hardening, rate limiting"
+Cargar prescripción,Subir imagen/PDF de Rx,"Prescripción, Cliente","App Móvil/Web, MS Prescripciones (OCR opcional)","Object Storage + KMS, K8s worker","Cifrado en reposo (AES‑256), RBAC, DLP básico"
+Validación de prescripción,Aprobación por farmacéutico/reglas,"Prescripción, Farmacéutico","Portal Backoffice, Motor de Reglas","VPC privada, K8s backoffice","MFA para staff, auditoría inmutable, SoD"
+Agregar al carrito,Persistir selección y cantidad,"Carrito, Producto, Cliente","MS Carritos, App Móvil/Web","Redis (session/cart), K8s","Rate limiting, CSRF/Session hardening"
+Checkout y pago,Autorización del pago,"Pedido, Pago, Cliente","MS Pagos, PSP externo","PSP/tokenización, Webhooks","PCI DSS scope, 3DS2, antifraude (risk scoring)"
+Reserva de stock,Stock reservado por sucursal,"Inventario, Sucursal, Pedido",MS Inventario,DB replicada multi‑sucursal,"Bloqueo optimista, SAGA/Outbox pattern"
+Despacho y logística,Pick‑Pack‑Ship y guía de envío,"Pedido, Entrega, Repartidor","MS Logística / TMS, POS bodega","Message Bus/Events, K8s workers","Firmas digitales, telemetría GPS"
+Rastreo y notificaciones,Estado del pedido al cliente,"Evento, Cliente, Pedido","MS Notificaciones, CRM",Email/SMS providers,"DKIM, SPF, DMARC; opt‑in/opt‑out"
+Atención posventa,"Devoluciones, PQRS","Ticket, Cliente, Pedido","CRM, Service Desk",SaaS CRM,"RBAC por rol, pseudonimización"
+Analítica/BI,KPIs de venta y cumplimiento,"Pedido, Producto, Sucursal","ETL, DWH, BI",Data Lake + Warehouse,"Anonimización/Agregación, acceso Just‑in‑Time"
