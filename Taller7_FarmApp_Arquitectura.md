@@ -1,6 +1,6 @@
 # Taller 7 — Integración de Vistas de Arquitectura (FarmApp)
 
-## 🎯 Objetivo
+##  Objetivo
 Integrar las vistas de **Negocio, Información, Aplicaciones, Infraestructura y Seguridad** en una narrativa visual y trazable que respalde los objetivos de FarmApp (cadena nacional de farmacias con e-commerce).
 
 ---
@@ -120,7 +120,7 @@ flowchart LR
 
 ---
 
-## 🧾 Modelo de Información (ER)
+##  Modelo de Información (ER)
 ```mermaid
 erDiagram
   Cliente ||--o{ Pedido : realiza
@@ -206,7 +206,7 @@ erDiagram
 
 ---
 
-## 🧩 Vista de Aplicaciones (Componentes)
+##  Vista de Aplicaciones (Componentes)
 ```mermaid
 flowchart TB
   UI1[App Movil] --> APIGW[API Gateway]
@@ -242,7 +242,7 @@ flowchart TB
 
 ---
 
-## 🏗️ Vista de Infraestructura (Despliegue híbrido)
+##  Vista de Infraestructura (Despliegue híbrido)
 ```mermaid
 flowchart LR
   subgraph Edge
@@ -271,7 +271,7 @@ flowchart LR
 
 ---
 
-## 🛡️ Vista de Seguridad (Controles por capa)
+##  Vista de Seguridad (Controles por capa)
 - **Identidad y Acceso**: OIDC/OAuth2 para clientes; IAM con RBAC y **MFA** para personal (farmacéuticos, operadores, admins). Segregación de funciones (SoD).
 - **Protección de Datos**: **TLS 1.3** en tránsito; cifrado en reposo (**AES‑256** con **KMS**). Pseudonimización/anonimización en analítica. DLP básico para archivos de Rx.
 - **Pagos**: Alcance reducido **PCI DSS 4.0** mediante tokenización con PSP; **3DS2**; monitoreo antifraude (reglas + ML si aplica).
@@ -286,14 +286,14 @@ Consulta el CSV adjunto `FarmApp_Traceability.csv` para ver el cruce **Negocio �
 
 ---
 
-## 🧪 Cómo presentarlo en clase
+##  Cómo presentarlo en clase
 1. Abre el TXT **FarmApp_Miro_Prompt.txt** y crea el tablero con 5 swimlanes.
 2. Pega las etapas de negocio y repite el patrón de trazabilidad vertical por cada etapa.
 3. Exporta una imagen/PDF del tablero y referéncialo en el informe.
 
 ---
 
-## 📝 Checklist para la rúbrica (5.0)
+## Checklist para la rúbrica (5.0)
 - [ ] **Integración clara** entre las 5 capas con líneas de trazabilidad.
 - [ ] **Aplicado al cliente real** (si adaptan FarmApp): decisiones explícitas (SAGA, tokenización, multi‑sucursal).
 - [ ] **Narrativa**: por qué estas decisiones maximizan continuidad del servicio y seguridad.
@@ -301,7 +301,7 @@ Consulta el CSV adjunto `FarmApp_Traceability.csv` para ver el cruce **Negocio �
 
 ---
 
-## 📚 Referencias y buenas prácticas
+## Referencias y buenas prácticas
 - TOGAF Standard: https://www.opengroup.org/togaf
 - ArchiMate 3.2: https://pubs.opengroup.org/architecture/archimate3-doc/
 - C4 Model: https://c4model.com
